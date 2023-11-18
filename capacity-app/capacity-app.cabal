@@ -1,0 +1,38 @@
+-- Instructions on how to write this file are in the Cabal
+-- documentation, which can be found here:
+--   http://haskell.org/cabal/release/cabal-latest/doc/users-guide/
+
+name: capacity-app
+version: 1.0.0.2
+license: BSD3
+license-file: LICENSE
+copyright: (c) Netowork
+author: Ernesto Rodriguez
+maintainer: Ernesto Rodriguez <neto@netowork.me>
+bug-reports: mailto:neto@netowork.me
+stability: stable
+homepage: https://github.com/netogallo/capacity
+synopsis: A Multiple Sequence Alignment Generator
+category: Bio
+cabal-version: >= 1.6
+build-type: Simple
+
+Description:
+  A multiple sequence alignment improving app.
+
+source-repository head
+  type:     git
+  location: https://github.com/netogallo/capacity/
+
+flag threaded
+  default: False
+
+executable capacity-app
+  hs-source-dirs: src
+  main-is: Main.hs
+  build-depends:
+    base >= 4.2 && < 5,
+    plutus-example >= 1.2.0.0
+
+  if flag(threaded)
+     ghc-options: -threaded

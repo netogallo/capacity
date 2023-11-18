@@ -1,0 +1,3 @@
+[submodule "support/plutus-apps"]
+	path = support/plutus-apps
+	url = https://github.com/input-output-hk/plutus-apps.git
